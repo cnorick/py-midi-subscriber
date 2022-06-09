@@ -34,8 +34,8 @@ A sequence is an ordered list of notes played one after the other. Use the `regi
 specific sequence. Provide a list of notes (in order), as well as a callback method to run when the sequence of notes is played:
 
 ```py
-wankaSeq = ['D3', 'C#3', 'D3', 'C#3', 'D3', 'D3', 'C#3', 'D3', 'E3', 'F#3', 'E3', 'F#3', 'G3', 'A3', 'G#3', 'A3', 'G#3', 'A3']
-midi.registerSequence(wankaSeq, lambda: print("Wanka sequence played"))
+wonkaSeq = ['D3', 'C#3', 'D3', 'C#3', 'D3', 'D3', 'C#3', 'D3', 'E3', 'F#3', 'E3', 'F#3', 'G3', 'A3', 'G#3', 'A3', 'G#3', 'A3']
+midi.registerSequence(wonkaSeq, lambda: print("Wonka sequence played"))
 ```
 
 Instead of hard coding all of the notes, you can use the `printSequence` method to print the notes to the console as you play
@@ -62,7 +62,7 @@ PIANO_NAME = "Portable Grand"
 def handleCallback(id):
     print(id, "played")
 
-wankaSeq = ['D3', 'C#3', 'D3', 'C#3', 'D3', 'D3', 'C#3', 'D3', 'E3', 'F#3', 'E3', 'F#3', 'G3', 'A3', 'G#3', 'A3', 'G#3', 'A3']
+wonkaSeq = ['D3', 'C#3', 'D3', 'C#3', 'D3', 'D3', 'C#3', 'D3', 'E3', 'F#3', 'E3', 'F#3', 'G3', 'A3', 'G#3', 'A3', 'G#3', 'A3']
 furElise = ['E4', 'D#4', 'E4', 'D#4', 'E4', 'B3', 'D4', 'C4', 'A3', 'A1', 'E2', 'A2', 'C3', 'E3', 'A3', 'B3', 'E1', 'E2', 'G#2', 'E3', 'G#3', 'B3', 'C4', 'A1', 'E2', 'A2', 'E3', 'E4', 'D#4', 'E4', 'D#4', 'E4', 'B3', 'D4',
  'C4', 'A1', 'A3', 'E2', 'A2', 'C3', 'E3', 'A3', 'B3', 'E1', 'E2', 'G#2', 'E3', 'C4', 'B3', 'A1', 'A3', 'E2', 'A2']
 nbc = ['G3', 'E4', 'C4']
@@ -77,7 +77,7 @@ midi.registerChord(['E3', 'G3', 'C4'], lambda: handleCallback("cfirst-chord"))
 midi.registerSequence(['E4', 'G4', 'C5'], lambda: handleCallback("seq-egc"))
 midi.registerSequence(['C5', 'G4', 'E4'], lambda: handleCallback("seq-cge"))
 midi.registerSequence(['E4', 'C5', 'G4'], lambda: handleCallback("seq-ecg"))
-midi.registerSequence(wankaSeq, lambda: handleCallback("wanka"))
+midi.registerSequence(wonkaSeq, lambda: handleCallback("wonka"))
 midi.registerSequence(nbc, lambda: handleCallback("nbc"))
 midi.registerSequence(furElise, lambda: handleCallback("furElise"))
 #midi.printSequence() // Uncomment to print the notes you play to the console.
